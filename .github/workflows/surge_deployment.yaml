@@ -27,9 +27,9 @@ jobs:
         with:
           node-version: 12
 
-      # - uses: borales/actions-yarn@v2.0.0
-      #   with:
-      #     cmd: install # will run `yarn install` command
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
 
       - name: Build React App
         run: yarn build
@@ -38,4 +38,4 @@ jobs:
         run: npm install --global surge
 
       - name: Deploy to Surge
-        run: surge ./build ExpenseTracker.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./build ExpenseTracker-talhabytheway.surge.sh --token ${{ secrets.SURGE_TOKEN }}
